@@ -4,7 +4,7 @@ inventory = {}
 # Function to add items to the inventory.
 def add_item():
     name = input("Enter the item name: ")
-    quantity = int(input("Enter the quantity: ")
+    quantity = int(input("Enter the quantity: ")) #added an extra parenthesis 
     
     # Check if the item is already in the inventory and update its quantity.
     if name in inventory:
@@ -18,15 +18,18 @@ def remove_item():
     name = input("Enter the item name to remove: ")
     
     # Check if the item is in the inventory.
-    if name in inventory:
-        quantity = int(input("Enter the quantity to remove: "))
-        # Check if there is enough of the item in the inventory to remove.
-        if quantity <= inventory[name]:
-            inventory[name] -= quantity
-        else:
-            print("Not enough of that item in the inventory.")
-    else:
-        print("Item not found in the inventory.")
+    try:
+       except:
+              print("you must enter an integer to remove from the quantity")
+             if name in inventory:
+                 quantity = int(input("Enter the quantity to remove: "))
+                # Check if there is enough of the item in the inventory to remove.
+                 if quantity <= inventory[name]:
+                     inventory[name] -= quantity
+                 else:
+                    print("Not enough of that item in the inventory.")
+             else:
+                print("Item not found in the inventory.")
 
 # Function to view the current inventory.
 def view_inventory():
@@ -45,7 +48,7 @@ def search_item():
 
 while True:
     print("\nInventory Management System")
-    print("1. Add Item")
+    print("1. Add Item") 
     print("2. Remove Item")
     print("3. View Inventory")
     print("4. Search Item")
